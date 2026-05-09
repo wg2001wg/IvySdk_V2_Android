@@ -2099,7 +2099,15 @@ namespace com.ivy.sdk
                 _class.CallStatic("joinQQGroup", key);
             }
         }
-   
+
+        public void UpdateLimitAge(int age)
+        {
+            if (_class != null)
+            {
+                _class.CallStatic("updateLimitAge", age);
+            }
+        }
+
         #endregion
 
 
@@ -2316,6 +2324,8 @@ namespace com.ivy.sdk
         private static extern void openUrl(string url);
         [DllImport("__Internal")]
         private static extern bool isIpad();
+        [DllImport("__Internal")]
+        private static extern void rate();
         [DllImport("__Internal")]
         private static extern bool isDebug();
         [DllImport("__Internal")]
@@ -3406,7 +3416,7 @@ namespace com.ivy.sdk
 
         public void Rate()
         {
-            openAppStore(null);
+            rate();
         }
 
         public void SystemShareText(String txt)
