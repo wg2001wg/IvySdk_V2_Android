@@ -1830,7 +1830,7 @@ namespace com.ivy.sdk
             }
         }
 
-        public void copyTxt(string message)
+        public void CopyTxt(string message)
         {
             if (_class != null)
             {
@@ -2305,6 +2305,8 @@ namespace com.ivy.sdk
         [DllImport("__Internal")]
         private static extern bool isNetworkConnected();
         [DllImport("__Internal")]
+        private static extern void copyText(string text);
+        [DllImport("__Internal")]
         private static extern void sendEmail(string email, string content);
         [DllImport("__Internal")]
         private static extern long getFreeMemory();
@@ -2320,8 +2322,6 @@ namespace com.ivy.sdk
         private static extern void showToast(string message);
         [DllImport("__Internal")]
         private static extern void openUrl(string url);
-        [DllImport("__Internal")]
-        private static extern void copyText(string txt);
         [DllImport("__Internal")]
         private static extern bool isIpad();
         [DllImport("__Internal")]
@@ -3434,11 +3434,6 @@ namespace com.ivy.sdk
             openUrl(url);
         }
 
-        public void CopyText(string text)
-        {
-            copyText(text);
-        }
-
         public bool HasNotch()
         {
             return hasNotch();
@@ -3472,6 +3467,11 @@ namespace com.ivy.sdk
         public void Toast(string message)
         {
             showToast(message);
+        }
+
+        public void CopyTxt(string message)
+        {
+            copyText(message);
         }
 
         /**
