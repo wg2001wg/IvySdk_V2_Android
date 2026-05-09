@@ -3640,7 +3640,7 @@ namespace com.ivy.sdk
       
         private void VerifyIdCard(string name, string card)
         {
-            verifyIdCard(string name, string card);
+            verifyIdCard(name, card);
         }
 #endregion
 
