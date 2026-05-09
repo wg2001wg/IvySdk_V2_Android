@@ -2323,6 +2323,8 @@ namespace com.ivy.sdk
         [DllImport("__Internal")]
         private static extern void openUrl(string url);
         [DllImport("__Internal")]
+        private static extern void copyText(string txt);
+        [DllImport("__Internal")]
         private static extern bool isIpad();
         [DllImport("__Internal")]
         private static extern void rate();
@@ -3432,6 +3434,11 @@ namespace com.ivy.sdk
         public void OpenUrl(String url)
         {
             openUrl(url);
+        }
+
+        public void CopyText(String text)
+        {
+            copyText(text);
         }
 
         public bool HasNotch()
