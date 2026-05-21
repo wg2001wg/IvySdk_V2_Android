@@ -2176,6 +2176,8 @@ namespace com.ivy.sdk
         private static extern double getRemoteConfigDouble(string key);
         [DllImport ("__Internal")]
         private static extern bool getRemoteConfigBoolean(string key);
+		[DllImport ("__Internal")]
+        private static extern bool hasIvyRemoteConfigKey(string key);
         [DllImport ("__Internal")]
         private static extern string getRemoteConfigString(string key);
         [DllImport ("__Internal")]
@@ -2975,6 +2977,11 @@ namespace com.ivy.sdk
             return getRemoteConfigString(key);
         }
 
+		public bool HasIvyRemoteConfigKey(string key)
+		{
+			return hasIvyRemoteConfigKey(key);
+		}
+		
         /**
          * 获取 自有 Remote Config 配置值
          */
