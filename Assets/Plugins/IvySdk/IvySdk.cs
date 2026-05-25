@@ -150,6 +150,23 @@ namespace com.ivy.sdk
             }
         }
 
+        public void EnterVariant(string varid)
+        {
+            if (_class != null)
+            {
+                _class.CallStatic("enterVariant", varid);
+            }
+        }
+
+        public string GetABHitResult()
+        {
+            if (_class != null)
+            {
+                return _class.CallStatic<string>("getABHitResult");
+            }
+            return null;
+        }
+
         public void SetHeaderInfo(Dictionary<string, object> data)
         {
             try
