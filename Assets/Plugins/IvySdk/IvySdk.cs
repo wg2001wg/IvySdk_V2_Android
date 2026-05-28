@@ -141,6 +141,33 @@ namespace com.ivy.sdk
                 Debug.LogException(e);
             }
         }
+        //广告媒体平台
+        public string GetMediaSource()
+        {
+            if (_class != null)
+            {
+                return _class.CallStatic<string>("getMediaSource");
+            }
+            return "";
+        }
+        //广告系列名称
+        public string GetCampaignName()
+        {
+            if (_class != null)
+            {
+                return _class.CallStatic<string>("getCampaignName");
+            }
+            return "";
+        }
+        //广告组名称
+        public string GetAdSetName()
+        {
+            if (_class != null)
+            {
+                return _class.CallStatic<string>("getAdSetName");
+            }
+            return "";
+        }
 
         public void EnableAbTest(ABChannel channel)
         {
